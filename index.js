@@ -181,13 +181,13 @@ const ratioSuggestions = [
   { label: "-2", value: -2, id: "-2", description: "-2" },
   { label: "62", value: 62, id: "62", description: "62" },
   {
-    label: "rand int",
+    label: "random integer",
     value: () => Math.round(randNumBtw(0, 10000)),
     id: "random-int",
     description: "A random integer between 0 and 10000",
   },
   {
-    label: "rand dec",
+    label: "random decimal",
     value: () => randNumBtw(0, 10000),
     id: "random-dec",
     description: "A random decimal between 0 and 10000",
