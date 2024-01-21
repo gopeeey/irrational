@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Irrational | Gopeh</title>    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="descriptions" content="A demonstation showing simple and complex patterns in rational and irrational numbers">
+        <link rel="stylesheet" type="text/css" href="./index.css">
+    </head>
+
+    <body>
+        <div class="appbar">
+            <div class="settings-icons">
+                <img src="./settings.png" alt="Settings" class="rotate1 active-button" id="settings-icon" />
+                <img src="./close.png" alt="Close" class="rotate2" id="close-icon" />
+            </div>
+
+            <form id="settings" class="settings">
+                <label for="ratio">Ratio</label>
+                <input type="number" id="ratio" name="ratio" value="3" step="any" />
+                <div class="suggestions" id="suggestions">
+                    <span class="suggestion">π</span>
+                    <span class="suggestion">π</span>
+                </div>
+
+                <label for="ratio">Speed</label>
+                <input type="range" id="speed" name="speed" min="1" max="100" />
+
+                <input type="submit" id="submit" value="START"  />
+
+                <div class="details-header" id="concept-btn">
+                    <span class="text">Concept</span>
+                    <img src="./chevron-down.png" alt="expand" class="concept-btn" id="concept-btn-img" />
+                </div>
+
+                <div class="details" id="details-root">
+                    <p class="explanation">
+                        A demonstation showing simple and complex patterns in rational and irrational numbers.<br /><br />
+                        
+                        The patterns are a result of the ratio of the speeds of the blue and red arm. Speed here is defined as the number of
+                        rotations per second an arm makes about it's axis.<br /> <br />
+                        
+                        To explain further, there's the red arm that rotates about the very center of the pattern. Attached to the other end of
+                        the red arm is the blue arm. The point at which the blue arm touches the red arm is the axis about which the blue arm
+                        rotates. Since this point revolves around the very center of the pattern, the entire blue arm also revolves around the
+                        center of the pattern while also rotating about it's own axis. <br /> <br />
+
+                        Finally, on the other end of the blue arm is, well, a pen
+                        that traces out the path that this point of the blue arm takes. This path is the pattern observed on the screen.
+                    </p>
+
+                    <div class="attr">
+                        <div class="title">Attributions</div>
+                        <a href="https://www.flaticon.com/free-icons/settings" title="settings icons">
+                            Settings icon created by Freepik - Flaticon
+                        </a>
+
+                        <a href="https://www.flaticon.com/free-icons/close" title="close icons">
+                            Close icon created by inkubators - Flaticon
+                        </a>
+
+                        <a href="https://www.flaticon.com/free-icons/down-chevron" title="down chevron icons">
+                            Down chevron icon created by Dixit Lakhani_02 - Flaticon
+                        </a>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+
+        <div class="main" id="container">
+            
+
+            <div class="arms">
+                <div class="wheel" id="big-wheel">
+                    <div class="line" id="big-arm"></div>
+
+                    <div class="wheel" id="small-wheel">
+                        <div class="line" id="small-arm"></div>
+                    </div>
+                </div>
+            </div>
+            <canvas id="canvas"></canvas>
+        </div>
+        
+        <script type="text/javascript" src="./index.js"></script>
+    </body>
+</html>

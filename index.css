@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --primaryColor: #eaeaea;
+    --secondaryColor: #161515;
+    --tertiaryColor: #d0d0d0;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--secondaryColor);
+    font-family: 'Roboto', sans-serif;
+}
+
+.content {
+    height: 100vh;
+}
+
+.main {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    margin-bottom: 10em;
+    box-sizing: border-box;
+    
+}
+
+.appbar {
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100% - 4em);
+    padding: 2em;
+    position: relative;
+    z-index: 2;
+}
+
+.appbar .settings-icons {
+    position: relative;
+}
+
+.appbar .settings-icons img {
+    width: 30px;
+    height: 30px;
+    transition: all 300ms ease;
+    cursor: pointer;
+    position: absolute;
+    right: 0.1em;
+    z-index: 1;
+}
+
+.appbar .settings-icons .rotate1 {
+    transform: scale(0) rotate(-90deg);
+}
+
+.appbar .settings-icons .rotate2 {
+    transform: scale(0) rotate(90deg);
+}
+
+.appbar .settings-icons .active-button {
+    transform: scale(1) rotate(0deg);
+    z-index: 2;
+}
+
+.appbar .settings-icons .active-button:hover {
+    transform: scale(1.2);
+}
+
+.appbar .settings {
+    position: absolute;
+    width: 90vw;
+    background-color: red;
+    top: 120%;
+    background-color: var(--primaryColor);
+    border-radius: 0.7em;
+    padding: 2em 1em;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: all 300ms ease;
+    margin-right: -1.8em;
+    max-width: 350px;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+@media only screen and (min-width: 600px) {
+    .appbar .settings {
+        width: 35vw;
+        margin-right: 0em;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .appbar .settings {
+        width: 25vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .appbar .settings {
+        width: 20vw;
+    }
+}
+
+.appbar .active {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.appbar .settings label {
+    display: block;
+    margin-bottom: 0.6em;
+    font-size: 0.8em;
+}
+
+.appbar .settings #ratio {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid var(--secondaryColor);
+    border-radius: 0.4em;
+    padding: 0.5em;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+.appbar .settings .suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.3em;
+    margin-bottom: 2em;
+}
+
+.appbar .settings .suggestions span {
+    display: inline-block;
+    background-color: var(--tertiaryColor);
+    margin: 0.3em;
+    font-size: 0.9em;
+    padding: 0.3em 0.7em;
+    border-radius: 0.3em;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.appbar .settings .suggestions span:hover {
+    background-color: #b0b0b0
+}
+
+.appbar .settings #ratio:focus {
+    outline: none;
+}
+
+.appbar .settings #speed {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 0.4em;
+    background: var(--secondaryColor);
+    outline: none;
+}
+
+
+.appbar .settings #speed::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5em;
+    aspect-ratio: 1;
+    border-radius: 3em;
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+}
+
+.appbar .settings #speed::-moz-range-thumb {
+    width: 1.5em;
+    aspect-ratio: 1;
+    border-radius: 3em;
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+}
+
+.appbar .settings #submit {
+    margin-top: 3em;
+    width: 100%;
+    padding: 0.8em;
+    border-radius: 0.4em;
+    border: none;
+    background-color: var(--secondaryColor);
+    color: white;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.appbar .settings #submit:hover {
+    background-color: #303030;
+}
+
+.appbar .settings #submit:active {
+    background-color: black
+}
+
+.arms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.arms .wheel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(255, 0, 0, 0.998); */
+    border-radius: 30em;
+    aspect-ratio: 1;
+    position: absolute;
+}
+
+.arms .wheel #big-arm {
+    border-bottom: 1px solid red;
+    position: relative;
+}
+
+.arms .wheel #small-arm {
+    border-bottom: 1px solid blue;
+    position: relative;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    background-color: var(--primaryColor);
+    transition: all 300ms;
+    cursor: pointer;
+    border-radius: 0.3em;
+    padding: 0.4em 0em
+}
+
+.details-header:hover {
+    background-color: var(--tertiaryColor);
+}
+
+.details-header:active {
+    background-color: var(--primaryColor);
+}
+
+.details-header .concept-btn {
+    width: 12px;
+    height: 12px;
+    transform: rotate(0deg);
+    transition: all 300ms;
+}
+
+.details-header .active-img {
+    transform: rotate(180deg);
+}
+
+.details {
+    max-height: 0;
+    transition: all 600ms ease;
+    overflow: hidden;
+}
+
+.active-details {
+    max-height: 700px;
+}
+
+.details p {
+    font-size: 0.8em;
+    line-height: 1.6em;
+}
+
+.attr {
+    margin-top: 2em;
+}
+
+.attr .title {
+    margin-bottom: 1em;
+}
+
+.attr a {
+    display: block;
+    margin: 0.4em 0em;
+    font-size: 0.8em;
+}
